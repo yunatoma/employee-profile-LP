@@ -1,0 +1,59 @@
+---
+const solutions = [
+  {
+    step: '01',
+    title: '社員プロフィールを一元管理',
+    description: '氏名・部署・職種・スキル・稼働状況・経歴・資格など、必要な情報をすべて1つのプラットフォームに集約します。',
+  },
+  {
+    step: '02',
+    title: 'スキル・部署・プロジェクトで絞り込み',
+    description: 'キーワード検索、ステータスフィルタ、ツリー選択など多彩な検索手段で、必要な人材をすぐに見つけられます。',
+  },
+  {
+    step: '03',
+    title: '社員自身がプロフィールを更新',
+    description: '一般社員が自分のプロフィールを直接編集できるため、管理者の手間を減らしながら情報の鮮度を保てます。',
+  },
+  {
+    step: '04',
+    title: '申請ワークフローで品質管理',
+    description: 'スキルやプロジェクトの追加は申請→承認フローで管理。マスターデータの品質を組織として維持できます。',
+  },
+  {
+    step: '05',
+    title: 'AIチャットで自然言語検索',
+    description: '「Reactが得意で今アサインできる人は？」のように質問するだけで、候補者とプロフィールリンクが返ってきます。',
+  },
+]
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <p class="text-indigo-600 font-semibold text-sm uppercase tracking-wider mb-3">Solution</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+        ひとナビが解決します
+      </h2>
+      <p class="text-gray-600 mt-4 max-w-xl mx-auto leading-relaxed">
+        社員プロフィールとスキル情報を、探せる・更新できる・活用できるチーム資産にする。
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-6 max-w-3xl mx-auto">
+      {solutions.map((s) => (
+        <div class="flex gap-6 items-start">
+          <div class="shrink-0 w-12 h-12 rounded-full bg-indigo-700 text-white flex items-center justify-center font-bold text-sm">
+            {s.step}
+          </div>
+          <div class="pt-2">
+            <h3 class="text-lg font-semibold text-gray-900 mb-1">{s.title}</h3>
+            <p class="text-gray-600 leading-relaxed">{s.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>

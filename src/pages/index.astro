@@ -1,9 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Hero from '../components/sections/Hero.astro'
+import Problem from '../components/sections/Problem.astro'
+import Solution from '../components/sections/Solution.astro'
+import Features from '../components/sections/Features.astro'
+import UseCases from '../components/sections/UseCases.astro'
+import Security from '../components/sections/Security.astro'
+import CtaSection from '../components/sections/CtaSection.astro'
 ---
 
-<Layout title="社員プロフィール">
-  <main class="min-h-screen bg-gray-50 flex items-center justify-center">
-    <h1 class="text-4xl font-bold text-gray-900">社員プロフィール LP</h1>
+<Layout
+  title="ひとナビ — 社員情報を、探せる人材データベースへ"
+  description="社員プロフィール、スキル、稼働状況、プロジェクト情報を一元管理。AIチャットでアサイン候補もすぐに見つかります。"
+>
+  <Header />
+  <main>
+    <Hero />
+    <Problem />
+    <Solution />
+    <Features />
+    <UseCases />
+    <Security />
+    <CtaSection />
   </main>
+  <Footer />
 </Layout>

@@ -1,0 +1,74 @@
+---
+const securityItems = [
+  {
+    icon: '🔐',
+    title: 'Googleログイン',
+    description: 'OAuth2.0 / Firebase Authentication によるGoogleアカウント認証。パスワード管理不要で安全にログインできます。',
+  },
+  {
+    icon: '🏢',
+    title: '組織ごとのデータ分離',
+    description: '組織IDベースのマルチテナント設計により、他組織のデータへのアクセスを構造的に遮断します。',
+  },
+  {
+    icon: '👮',
+    title: '権限分離',
+    description: '管理者と一般社員で操作範囲を明確に分離。社員は自分のプロフィールのみ、管理者は組織全体を管理できます。',
+  },
+  {
+    icon: '📝',
+    title: '申請承認フロー',
+    description: 'スキル・プロジェクトの追加は申請→承認の二段階。管理者が審査することでマスターデータの正確性を担保します。',
+  },
+]
+
+const techStack = [
+  { label: 'フロントエンド', items: ['React 19', 'TypeScript', 'Vite', 'Tailwind CSS v4', 'Redux Toolkit'] },
+  { label: 'バックエンド', items: ['Cloud Run', 'Express.js', 'Repository Pattern'] },
+  { label: 'インフラ・DB', items: ['Firebase Authentication', 'Cloud Firestore', 'Firebase Storage'] },
+  { label: 'AI・テスト', items: ['Gemini API', 'Recharts', 'Vitest', 'fast-check'] },
+]
+---
+
+<section id="security" class="py-24 bg-slate-900 text-white">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-16">
+      <p class="text-indigo-400 font-semibold text-sm uppercase tracking-wider mb-3">Security & Architecture</p>
+      <h2 class="text-3xl lg:text-4xl font-bold text-white">
+        セキュアな設計と信頼できる技術構成
+      </h2>
+    </div>
+
+    <!-- セキュリティ -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+      {securityItems.map((item) => (
+        <div class="bg-slate-800 rounded-xl p-7 border border-slate-700">
+          <div class="text-3xl mb-4">{item.icon}</div>
+          <h3 class="text-lg font-semibold text-white mb-2">{item.title}</h3>
+          <p class="text-slate-400 leading-relaxed">{item.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- 技術スタック -->
+    <div class="border-t border-slate-700 pt-16">
+      <h3 class="text-center text-xl font-semibold text-white mb-10">技術スタック</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {techStack.map((group) => (
+          <div>
+            <p class="text-xs font-semibold text-indigo-400 uppercase tracking-wider mb-3">{group.label}</p>
+            <ul class="flex flex-col gap-2">
+              {group.items.map((item) => (
+                <li class="text-slate-300 text-sm bg-slate-800 rounded-lg px-4 py-2 border border-slate-700">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
