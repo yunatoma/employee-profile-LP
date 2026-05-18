@@ -4,39 +4,35 @@ const features = [
     icon: '👤',
     title: 'プロフィール管理',
     description: '氏名・部署・職種・スキル・稼働状況・プロジェクト・資格・アバター画像など豊富な項目を管理。社員一覧はリスト/ギャラリー表示に切り替え可能。',
-    // 差し替え例: src="/screenshot-employee-list.png"
-    screenshot: 'public/screenshot-employee-list.png',
+    imgSrc: '/screenshot-employee-list.png',
     alt: 'ひとナビ 社員一覧画面',
   },
   {
     icon: '📈',
     title: 'ダッシュボード・可視化',
     description: '在籍社員数・稼働状況のサマリー、ステータス内訳グラフ、部署別社員数グラフ、スキル別人数TOP10グラフで組織全体を一目で把握。',
-    // 差し替え例: src="/screenshot-dashboard.png"
-    screenshot: 'public/screenshot-dashboard.png',
+    imgSrc: '/screenshot-dashboard.png',
     alt: 'ひとナビ ダッシュボード画面',
   },
   {
     icon: '🏢',
     title: '組織管理・権限管理',
     description: 'Googleログインで即座に利用開始。組織単位でデータを分離し、管理者と一般社員の権限を分けてセキュアに運用できます。',
-    screenshot: null,
+    imgSrc: null,
     alt: null,
   },
   {
     icon: '📋',
     title: '申請管理',
     description: '社員が新しいスキルやプロジェクトを申請し、管理者が承認・却下。未処理の申請はヘッダーの通知ベルでリアルタイムに確認できます。',
-    // 差し替え例: src="/screenshot-requests.png"
-    screenshot: 'public/screenshot-requests.png',
+    imgSrc: '/screenshot-requests.png',
     alt: 'ひとナビ 申請管理画面',
   },
   {
     icon: '🤖',
     title: 'AI人材検索',
     description: '全ページ共通のフローティングチャットUIから自然言語で質問。スキル検索、稼働状況確認、プロジェクトアサイン候補をAIが推薦します。',
-    // 差し替え例: src="/screenshot-ai-chat.png"
-    screenshot: 'public/screenshot-ai-chat.png',
+    imgSrc: '/screenshot-ai-chat.png',
     alt: 'ひとナビ AIチャット画面',
   },
 ]
@@ -61,12 +57,16 @@ const features = [
           </div>
           <!-- スクリーンショット -->
           <div class="flex-1 w-full">
-            {feature.screenshot ? (
+            {feature.imgSrc ? (
+              <div class="rounded-xl border border-gray-200 shadow-lg overflow-hidden">
+                <img src={feature.imgSrc} alt={feature.alt ?? ''} class="w-full h-auto" />
+              </div>
+            ) : feature.title === 'AI人材検索' ? (
               <div class="rounded-xl border border-gray-200 shadow-lg overflow-hidden bg-gray-100 aspect-video flex items-center justify-center">
                 <div class="text-center p-6">
                   <div class="text-3xl mb-3">🖼️</div>
                   <p class="text-gray-500 text-sm font-medium">スクリーンショットを配置</p>
-                  <p class="text-gray-400 text-xs font-mono mt-2">{feature.screenshot}</p>
+                  <p class="text-gray-400 text-xs font-mono mt-2">public/screenshot-ai-chat.png</p>
                 </div>
               </div>
             ) : (
