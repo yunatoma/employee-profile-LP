@@ -28,23 +28,32 @@ const solutions = [
 ]
 ---
 
-<section class="py-24 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
+<section class="solution-section relative overflow-hidden py-24 bg-gradient-to-b from-white to-sky-50/80">
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
 
-    <div class="text-center mb-16">
-      <p class="text-indigo-600 font-semibold text-sm uppercase tracking-wider mb-3">Solution</p>
-      <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
-        ひとナビが解決します
-      </h2>
-      <p class="text-gray-600 mt-4 max-w-xl mx-auto leading-relaxed">
-        社員プロフィールとスキル情報を、探せる・更新できる・活用できるチーム資産にする。
-      </p>
+    <div class="mb-16 grid gap-8 lg:grid-cols-[0.86fr_1fr] lg:items-center">
+      <div>
+        <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-3">Solution</p>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">
+          ひとナビが解決します
+        </h2>
+        <p class="text-gray-600 mt-4 max-w-xl leading-relaxed">
+          社員プロフィールとスキル情報を、探せる・更新できる・活用できるチーム資産にする。
+        </p>
+      </div>
+      <div class="rounded-2xl border border-white bg-white/78 p-5 shadow-xl shadow-cyan-900/10 backdrop-blur-sm">
+        <div class="grid grid-cols-3 gap-3 text-center text-sm font-semibold">
+          <span class="rounded-lg bg-cyan-50 px-3 py-3 text-cyan-700">集約</span>
+          <span class="rounded-lg bg-indigo-50 px-3 py-3 text-indigo-700">検索</span>
+          <span class="rounded-lg bg-pink-50 px-3 py-3 text-pink-700">活用</span>
+        </div>
+      </div>
     </div>
 
-    <div class="flex flex-col gap-6 max-w-3xl mx-auto">
-      {solutions.map((s) => (
-        <div class="flex gap-6 items-start">
-          <div class="shrink-0 w-12 h-12 rounded-full bg-indigo-700 text-white flex items-center justify-center font-bold text-sm">
+    <div class="solution-flow relative mx-auto max-w-4xl">
+      {solutions.map((s, i) => (
+        <div class={`solution-step relative flex gap-5 rounded-xl border border-white/80 bg-white/75 p-5 shadow-sm shadow-cyan-900/5 backdrop-blur-sm ${i % 2 === 1 ? 'lg:ml-20' : 'lg:mr-20'}`}>
+          <div class="shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 text-white flex items-center justify-center font-bold text-sm shadow-lg shadow-cyan-500/20">
             {s.step}
           </div>
           <div class="pt-2">
@@ -57,3 +66,52 @@ const solutions = [
 
   </div>
 </section>
+
+<style>
+  .solution-section::before {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    top: 16%;
+    height: 120px;
+    transform: rotate(-3deg);
+    background: repeating-linear-gradient(
+      90deg,
+      rgb(34 211 238 / 0.11) 0 22px,
+      rgb(99 102 241 / 0.08) 22px 44px,
+      transparent 44px 68px
+    );
+  }
+
+  .solution-flow {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .solution-flow::before {
+    content: "";
+    position: absolute;
+    left: 1.5rem;
+    top: 1rem;
+    bottom: 1rem;
+    width: 2px;
+    background: linear-gradient(180deg, #22d3ee, #818cf8, #f472b6);
+  }
+
+  .solution-step {
+    transition: transform 220ms ease, box-shadow 220ms ease;
+  }
+
+  .solution-step:hover {
+    transform: translateX(4px);
+    box-shadow: 0 18px 42px rgb(8 47 73 / 0.1);
+  }
+
+  @media (min-width: 1024px) {
+    .solution-flow::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+</style>
