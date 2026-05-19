@@ -1,28 +1,24 @@
 ---
 const cases = [
   {
-    icon: 'fa-diagram-project',
     role: 'プロジェクトマネージャー',
     query: '「React経験者で今アサインできる人を探したい」',
     description: 'スキルフィルタと稼働状況で絞り込むか、AIチャットに質問するだけで候補者リストと各プロフィールリンクが返ってくる。',
     tags: ['スキル検索', 'AIチャット', '稼働確認'],
   },
   {
-    icon: 'fa-people-group',
     role: '人事担当者',
     query: '「新入社員・異動者のプロフィールを整備したい」',
     description: '管理者が事前登録したメールアドレスでGoogleログインすると自動的に組織に参加。社員自身がプロフィールを入力・更新できる。',
     tags: ['組織管理', '社員登録', 'プロフィール更新'],
   },
   {
-    icon: 'fa-chart-pie',
     role: '管理者',
     query: '「部署ごとの人数やスキル分布を把握したい」',
     description: 'ダッシュボードで部署別社員数グラフとスキル別人数TOP10グラフをすぐに確認。組織の状況を可視化して意思決定を支援する。',
     tags: ['ダッシュボード', '組織分析', '可視化'],
   },
   {
-    icon: 'fa-user-pen',
     role: '一般社員',
     query: '「新しいスキルやプロジェクトを追加したい」',
     description: '社員が申請→管理者が承認のフローでマスターデータに反映。承認結果は通知ベルでリアルタイムに確認できる。',
@@ -45,12 +41,9 @@ const cases = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      {cases.map((c, i) => (
-        <div class={`case-card relative overflow-hidden rounded-2xl border border-cyan-100 bg-white p-7 shadow-lg shadow-cyan-900/10 ${i === 1 || i === 2 ? 'md:translate-y-6' : ''}`}>
-          <div class="mb-5 flex items-center gap-3">
-            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-50 text-cyan-600">
-              <i class={`fa-solid ${c.icon}`}></i>
-            </div>
+      {cases.map((c) => (
+        <div class="case-card relative overflow-hidden rounded-2xl border border-cyan-100 bg-white p-7 shadow-lg shadow-cyan-900/10">
+          <div class="mb-5">
             <p class="text-xs font-semibold text-cyan-600 uppercase tracking-wider">{c.role}</p>
           </div>
           <div class="relative mb-5 rounded-xl bg-slate-950 px-5 py-4 text-white shadow-lg shadow-slate-900/10">
@@ -91,9 +84,4 @@ const cases = [
     box-shadow: 0 24px 52px rgb(8 47 73 / 0.12);
   }
 
-  @media (min-width: 768px) {
-    .case-card.md\:translate-y-6:hover {
-      transform: translateY(1rem);
-    }
-  }
 </style>

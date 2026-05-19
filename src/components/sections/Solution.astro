@@ -41,19 +41,19 @@ const solutions = [
           社員プロフィールとスキル情報を、探せる・更新できる・活用できるチーム資産にする。
         </p>
       </div>
-      <div class="rounded-2xl border border-white bg-white/78 p-5 shadow-xl shadow-cyan-900/10 backdrop-blur-sm">
+      <div class="solution-summary rounded-2xl border border-sky-200/80 bg-gradient-to-br from-sky-50 via-white to-violet-50 p-5 shadow-xl shadow-sky-900/10 backdrop-blur-sm">
         <div class="grid grid-cols-3 gap-3 text-center text-sm font-semibold">
-          <span class="rounded-lg bg-cyan-50 px-3 py-3 text-cyan-700">集約</span>
-          <span class="rounded-lg bg-indigo-50 px-3 py-3 text-indigo-700">検索</span>
-          <span class="rounded-lg bg-pink-50 px-3 py-3 text-pink-700">活用</span>
+          <span class="rounded-lg bg-white px-3 py-3 text-sky-700 shadow-sm ring-1 ring-sky-100">集約</span>
+          <span class="rounded-lg bg-white px-3 py-3 text-indigo-600 shadow-sm ring-1 ring-indigo-100">検索</span>
+          <span class="rounded-lg bg-white px-3 py-3 text-rose-600 shadow-sm ring-1 ring-rose-100">活用</span>
         </div>
       </div>
     </div>
 
     <div class="solution-flow relative mx-auto max-w-4xl">
-      {solutions.map((s, i) => (
-        <div class={`solution-step relative flex gap-5 rounded-xl border border-white/80 bg-white/75 p-5 shadow-sm shadow-cyan-900/5 backdrop-blur-sm ${i % 2 === 1 ? 'lg:ml-20' : 'lg:mr-20'}`}>
-          <div class="shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 text-white flex items-center justify-center font-bold text-sm shadow-lg shadow-cyan-500/20">
+      {solutions.map((s) => (
+        <div class="solution-step relative flex gap-5 rounded-xl border border-white/80 bg-white/75 p-5 shadow-sm shadow-cyan-900/5 backdrop-blur-sm">
+          <div class="shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-sky-400 to-indigo-400 text-white flex items-center justify-center font-bold text-sm shadow-lg shadow-sky-500/15">
             {s.step}
           </div>
           <div class="pt-2">
@@ -89,14 +89,31 @@ const solutions = [
     gap: 1.25rem;
   }
 
+  .solution-summary {
+    position: relative;
+    box-shadow:
+      0 18px 40px rgb(8 47 73 / 0.1),
+      inset 0 1px 0 rgb(255 255 255 / 0.95);
+  }
+
+  .solution-summary::before {
+    content: "";
+    position: absolute;
+    inset: -1px -1px auto;
+    height: 5px;
+    border-radius: 1rem 1rem 0 0;
+    background: linear-gradient(90deg, #7dd3fc, #c4b5fd, #f9a8d4);
+  }
+
   .solution-flow::before {
     content: "";
     position: absolute;
-    left: 1.5rem;
+    /* p-5(1.25rem) + circle half-width(1.5rem) - line half-width(1px) */
+    left: calc(1.25rem + 1.5rem - 1px);
     top: 1rem;
     bottom: 1rem;
     width: 2px;
-    background: linear-gradient(180deg, #22d3ee, #818cf8, #f472b6);
+    background: linear-gradient(180deg, #7dd3fc, #c4b5fd, #f9a8d4);
   }
 
   .solution-step {
@@ -106,12 +123,5 @@ const solutions = [
   .solution-step:hover {
     transform: translateX(4px);
     box-shadow: 0 18px 42px rgb(8 47 73 / 0.1);
-  }
-
-  @media (min-width: 1024px) {
-    .solution-flow::before {
-      left: 50%;
-      transform: translateX(-50%);
-    }
   }
 </style>

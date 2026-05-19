@@ -1,50 +1,40 @@
 ---
 const features = [
   {
-    icon: 'fa-user',
     label: 'People Hub',
-    color: 'text-cyan-600',
-    tint: 'bg-cyan-50',
+    color: 'text-sky-600',
     title: 'プロフィール管理',
     description: '氏名・部署・職種・スキル・稼働状況・プロジェクト・資格・アバター画像など豊富な項目を管理。社員一覧はリスト/ギャラリー表示に切り替え可能。',
     imgSrc: '/screenshot-employee-list.png',
     alt: 'ひとナビ 社員一覧画面',
   },
   {
-    icon: 'fa-chart-line',
     label: 'Analytics',
     color: 'text-indigo-600',
-    tint: 'bg-indigo-50',
     title: 'ダッシュボード・可視化',
     description: '在籍社員数・稼働状況のサマリー、ステータス内訳グラフ、部署別社員数グラフ、スキル別人数TOP10グラフで組織全体を一目で把握。',
     imgSrc: '/screenshot-dashboard.png',
     alt: 'ひとナビ ダッシュボード画面',
   },
   {
-    icon: 'fa-building',
     label: 'Organization',
     color: 'text-lime-700',
-    tint: 'bg-lime-50',
     title: '組織管理・権限管理',
     description: 'Googleログインで即座に利用開始。組織単位でデータを分離し、管理者と一般社員の権限を分けてセキュアに運用できます。',
     imgSrc: null,
     alt: null,
   },
   {
-    icon: 'fa-clipboard-list',
     label: 'Workflow',
-    color: 'text-pink-600',
-    tint: 'bg-pink-50',
+    color: 'text-rose-500',
     title: '申請管理',
     description: '社員が新しいスキルやプロジェクトを申請し、管理者が承認・却下。未処理の申請はヘッダーの通知ベルでリアルタイムに確認できます。',
     imgSrc: '/screenshot-requests.png',
     alt: 'ひとナビ 申請管理画面',
   },
   {
-    icon: 'fa-robot',
     label: 'AI Search',
     color: 'text-violet-600',
-    tint: 'bg-violet-50',
     title: 'AI人材検索',
     description: '全ページ共通のフローティングチャットUIから自然言語で質問。スキル検索、稼働状況確認、プロジェクトアサイン候補をAIが推薦します。',
     imgSrc: '/screenshot-ai-chat.png',
@@ -74,14 +64,9 @@ const features = [
         <div class={`feature-panel grid gap-8 rounded-2xl border border-white bg-white/80 p-5 shadow-xl shadow-cyan-900/10 backdrop-blur-sm lg:grid-cols-[0.78fr_1.22fr] lg:p-8 ${i % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
           <!-- テキスト -->
           <div class={`${i % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-            <div class="mb-5 flex items-center gap-3">
-              <div class={`w-14 h-14 ${feature.tint} rounded-2xl flex items-center justify-center shadow-sm ring-1 ring-white`}>
-                <i class={`fa-solid ${feature.icon} ${feature.color} text-2xl`}></i>
-              </div>
-              <div>
-                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Feature {String(i + 1).padStart(2, '0')}</p>
-                <p class={`text-sm font-semibold ${feature.color}`}>{feature.label}</p>
-              </div>
+            <div class="mb-5">
+              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-0.5">Feature {String(i + 1).padStart(2, '0')}</p>
+              <p class={`text-sm font-semibold ${feature.color}`}>{feature.label}</p>
             </div>
             <h3 class="text-2xl font-bold text-gray-900 mb-4">{feature.title}</h3>
             <p class="text-gray-600 leading-relaxed text-lg">{feature.description}</p>
@@ -91,7 +76,7 @@ const features = [
             {feature.imgSrc ? (
               <div class="feature-window rounded-xl border border-slate-100 shadow-xl shadow-cyan-900/10 overflow-hidden bg-white">
                 <div class="flex h-9 items-center gap-2 border-b border-slate-100 bg-slate-50 px-4">
-                  <span class="h-2.5 w-2.5 rounded-full bg-pink-400"></span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-rose-300"></span>
                   <span class="h-2.5 w-2.5 rounded-full bg-amber-300"></span>
                   <span class="h-2.5 w-2.5 rounded-full bg-lime-400"></span>
                 </div>
@@ -106,7 +91,7 @@ const features = [
               </div>
             ) : (
               <!-- 組織管理・権限管理 リッチイラスト -->
-              <div class="rounded-2xl border border-cyan-100 shadow-xl shadow-cyan-900/10 overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50 to-cyan-50 p-6 select-none">
+              <div class="rounded-2xl border border-sky-100 shadow-xl shadow-cyan-900/10 overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50 to-indigo-50 p-6 select-none">
 
                 <!-- Google ログインバナー -->
                 <div class="flex items-center gap-3 bg-white rounded-xl px-4 py-3 shadow-sm border border-gray-100 mb-6 w-fit mx-auto">
@@ -124,41 +109,40 @@ const features = [
                 <div class="flex flex-col items-center gap-0">
 
                   <!-- 組織ルート -->
-                  <div class="bg-cyan-600 text-white text-xs font-bold px-5 py-2 rounded-full shadow-md shadow-cyan-300/50 tracking-wide flex items-center gap-2">
-                    <i class="fa-solid fa-building text-cyan-200 text-[11px]"></i>
+                  <div class="bg-sky-500 text-white text-xs font-bold px-5 py-2 rounded-full shadow-md shadow-sky-200/60 tracking-wide">
                     株式会社サンプル（組織）
                   </div>
 
                   <!-- 縦線 -->
-                  <div class="w-px h-5 bg-cyan-300"></div>
+                  <div class="w-px h-5 bg-sky-200"></div>
 
                   <!-- 横線ブリッジ -->
                   <div class="flex items-start gap-16 relative">
-                    <div class="absolute top-0 left-[calc(50%-32px)] right-[calc(50%-32px)] h-px bg-cyan-300" style="left:52px;right:52px;"></div>
+                    <div class="absolute top-0 left-[calc(50%-32px)] right-[calc(50%-32px)] h-px bg-sky-200" style="left:52px;right:52px;"></div>
 
                     <!-- 管理者カラム -->
                     <div class="flex flex-col items-center gap-0">
-                      <div class="w-px h-5 bg-cyan-300"></div>
-                      <div class="relative bg-white border-2 border-cyan-400 rounded-xl px-4 py-3 shadow-md shadow-cyan-200/60 flex flex-col items-center gap-1.5 min-w-[110px]">
-                        <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-cyan-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap flex items-center gap-1">
-                          <i class="fa-solid fa-shield-halved text-[9px]"></i> 管理者
+                      <div class="w-px h-5 bg-sky-200"></div>
+                      <div class="relative bg-white border-2 border-sky-300 rounded-xl px-4 py-3 shadow-md shadow-sky-100 flex flex-col items-center gap-1.5 min-w-[110px]">
+                        <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-sky-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                          管理者
                         </div>
-                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center mt-1">
-                          <i class="fa-solid fa-user-tie text-white text-sm"></i>
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-sky-300 to-sky-500 flex items-center justify-center mt-1 text-white text-sm font-bold">
+                          田
                         </div>
                         <span class="text-xs font-semibold text-gray-800">田中 花子</span>
                         <div class="flex flex-col gap-1 w-full mt-1">
-                          <div class="flex items-center gap-1 bg-cyan-50 rounded-md px-2 py-0.5">
-                            <i class="fa-solid fa-check text-cyan-500 text-[9px]"></i>
-                            <span class="text-[10px] text-cyan-700">社員登録・編集</span>
+                          <div class="flex items-center gap-1 bg-sky-50 rounded-md px-2 py-0.5">
+                            <span class="text-sky-500 text-[9px] font-bold">✓</span>
+                            <span class="text-[10px] text-sky-700">社員登録・編集</span>
                           </div>
-                          <div class="flex items-center gap-1 bg-cyan-50 rounded-md px-2 py-0.5">
-                            <i class="fa-solid fa-check text-cyan-500 text-[9px]"></i>
-                            <span class="text-[10px] text-cyan-700">申請承認・却下</span>
+                          <div class="flex items-center gap-1 bg-sky-50 rounded-md px-2 py-0.5">
+                            <span class="text-sky-500 text-[9px] font-bold">✓</span>
+                            <span class="text-[10px] text-sky-700">申請承認・却下</span>
                           </div>
-                          <div class="flex items-center gap-1 bg-cyan-50 rounded-md px-2 py-0.5">
-                            <i class="fa-solid fa-check text-cyan-500 text-[9px]"></i>
-                            <span class="text-[10px] text-cyan-700">組織設定変更</span>
+                          <div class="flex items-center gap-1 bg-sky-50 rounded-md px-2 py-0.5">
+                            <span class="text-sky-500 text-[9px] font-bold">✓</span>
+                            <span class="text-[10px] text-sky-700">組織設定変更</span>
                           </div>
                         </div>
                       </div>
@@ -168,24 +152,24 @@ const features = [
                     <div class="flex flex-col items-center gap-0">
                       <div class="w-px h-5 bg-gray-300"></div>
                       <div class="relative bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-sm flex flex-col items-center gap-1.5 min-w-[110px]">
-                        <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-gray-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap flex items-center gap-1">
-                          <i class="fa-solid fa-user text-[9px]"></i> 一般社員
+                        <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-gray-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full whitespace-nowrap">
+                          一般社員
                         </div>
-                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center mt-1">
-                          <i class="fa-solid fa-user text-white text-sm"></i>
+                        <div class="w-9 h-9 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center mt-1 text-white text-sm font-bold">
+                          鈴
                         </div>
                         <span class="text-xs font-semibold text-gray-800">鈴木 一郎</span>
                         <div class="flex flex-col gap-1 w-full mt-1">
                           <div class="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-0.5">
-                            <i class="fa-solid fa-check text-gray-400 text-[9px]"></i>
+                            <span class="text-gray-400 text-[9px] font-bold">✓</span>
                             <span class="text-[10px] text-gray-600">プロフィール編集</span>
                           </div>
                           <div class="flex items-center gap-1 bg-gray-50 rounded-md px-2 py-0.5">
-                            <i class="fa-solid fa-check text-gray-400 text-[9px]"></i>
+                            <span class="text-gray-400 text-[9px] font-bold">✓</span>
                             <span class="text-[10px] text-gray-600">スキル・PJ申請</span>
                           </div>
                           <div class="flex items-center gap-1 bg-red-50 rounded-md px-2 py-0.5">
-                            <i class="fa-solid fa-xmark text-red-400 text-[9px]"></i>
+                            <span class="text-red-400 text-[9px] font-bold">✕</span>
                             <span class="text-[10px] text-red-400">組織設定変更</span>
                           </div>
                         </div>
@@ -196,7 +180,6 @@ const features = [
 
                 <!-- データ分離バッジ -->
                 <div class="mt-5 flex items-center justify-center gap-2 bg-white/80 border border-cyan-100 rounded-full px-4 py-2 w-fit mx-auto shadow-sm">
-                  <i class="fa-solid fa-lock text-cyan-500 text-xs"></i>
                   <span class="text-xs text-gray-600 font-medium">組織ごとにデータを完全分離・セキュア管理</span>
                 </div>
 
