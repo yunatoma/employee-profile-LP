@@ -1,43 +1,102 @@
-# Astro Starter Kit: Minimal
+# ひとナビ LP
 
-```sh
-npm create astro@latest -- --template minimal
-```
+社員プロフィール管理SaaS「ひとナビ」のランディングページです。
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+ひとナビは、社員プロフィール、スキル、部署、稼働状況、プロジェクト情報を組織単位で一元管理し、AIチャットで人材検索やアサイン候補の確認まで行えるWebアプリです。このLPは、デモ誘導とポートフォリオ掲載を目的に制作しています。
 
-## 🚀 Project Structure
+## 概要
 
-Inside of your Astro project, you'll see the following folders and files:
+- サービス名: ひとナビ
+- メインコピー: 社員情報を、探せる人材データベースへ。
+- 目的: デモ誘導、GitHub/ポートフォリオ掲載
+- トーン: 業務SaaS寄りの落ち着いた信頼感
+
+## 主な訴求
+
+- 社員情報を一箇所に集約し、検索・閲覧・更新の手間を減らす
+- スキル、部署、プロジェクト、稼働状況から必要な人材を探しやすくする
+- 社員自身がプロフィールを更新し、管理者は承認と品質管理に集中できる
+- AIチャットで「Reactが得意で今動ける人は？」のような自然言語検索ができる
+- Googleログインと組織単位のデータ分離で安全に運用できる
+
+## ページ構成
+
+`src/pages/index.astro` で以下のセクションを読み込んでいます。
+
+1. Hero
+2. Problem
+3. Solution
+4. Features
+5. Use Cases
+6. Security / Architecture
+7. CTA
+
+## 技術スタック
+
+- Astro 6
+- TypeScript
+- Tailwind CSS v4
+- Vercel adapter
+
+## ディレクトリ構成
 
 ```text
 /
-├── public/
+├── public/                  # 画像、faviconなどの静的アセット
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/
+│   │   ├── Header.astro
+│   │   ├── Footer.astro
+│   │   └── sections/        # LP各セクション
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   └── index.astro
+│   └── styles/
+│       └── global.css
+├── LPsetting.md             # LP制作ブリーフ
+├── astro.config.mjs
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## セットアップ
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Node.js 22.12.0 以上を使用します。
 
-Any static assets, like images, can be placed in the `public/` directory.
+```sh
+npm install
+```
 
-## 🧞 Commands
+## 開発
 
-All commands are run from the root of the project, from a terminal:
+```sh
+npm run dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+ローカル開発サーバーは通常 `http://localhost:4321` で起動します。
 
-## 👀 Want to learn more?
+## ビルド
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```sh
+npm run build
+```
+
+本番用ファイルは `dist/` に生成されます。
+
+## プレビュー
+
+```sh
+npm run preview
+```
+
+## デプロイ
+
+Vercel adapter を利用しています。Vercel に接続してデプロイする想定です。
+
+## 差し替え予定
+
+- デモURL
+- GitHubリポジトリURL
+- お問い合わせ先
+- 本番用スクリーンショット
+- 正式ロゴ/アイコン
